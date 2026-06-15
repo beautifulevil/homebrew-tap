@@ -1,6 +1,8 @@
 # homebrew-tap
 
 ```bash
-brew tap nuitfers/tap
+brew tap beautifulevil/tap
 brew install agentid
 ```
+
+Releases: https://github.com/beautifulevil/AgentID/releases

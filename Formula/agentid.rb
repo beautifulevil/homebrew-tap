@@ -12,7 +12,7 @@ class Agentid < Formula
   version "0.1.0"
   license "MIT"
 
-  GITHUB_REPO = "nuitfers/AgentID"
+  GITHUB_REPO = "beautifulevil/AgentID"
   BASE_URL = "https://github.com/#{GITHUB_REPO}/releases/download/v#{version}".freeze
 
   on_macos do
