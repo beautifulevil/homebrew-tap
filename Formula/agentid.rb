@@ -2,7 +2,7 @@ class Agentid < Formula
   desc "Git identity for AI coding agents"
   homepage "https://github.com/beautifulevil/AgentID"
   url "https://github.com/beautifulevil/AgentID/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "464b36432af1832c75b97f72541b75ec37ae3361e9ef792480467e7de0c2d66f"
+  sha256 "6fa0b7bb6c0fedd7a76557279d5963bcdf553c61ce592b570753b034e9390ba4"
   license "MIT"
 
   depends_on "rust" => :build
