@@ -1,8 +1,14 @@
-# homebrew-tap
+# Beautiful Evil Homebrew Tap
 
 ```bash
 brew tap beautifulevil/tap
 brew install agentid
 ```
 
-Releases: https://github.com/beautifulevil/AgentID/releases
+Direct install:
+
+```bash
+brew install beautifulevil/tap/agentid
+```
+
+AgentID releases: https://github.com/beautifulevil/AgentID/releases

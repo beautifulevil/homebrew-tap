@@ -1,47 +1,17 @@
-# Homebrew formula for AgentID CLI.
-#
-# Copy this file to your tap repository, e.g.:
-#   homebrew-tap/Formula/agentid.rb
-#
-# Update version, urls, and sha256 values after each GitHub release.
-# Run: ./packaging/homebrew/update-formula.sh v0.1.0
-
 class Agentid < Formula
   desc "Git identity for AI coding agents"
-  homepage "https://agentid.beautifulevilcompany.com"
-  version "0.1.0"
+  homepage "https://github.com/beautifulevil/AgentID"
+  url "https://github.com/beautifulevil/AgentID/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "464b36432af1832c75b97f72541b75ec37ae3361e9ef792480467e7de0c2d66f"
   license "MIT"
 
-  GITHUB_REPO = "beautifulevil/AgentID"
-  BASE_URL = "https://github.com/#{GITHUB_REPO}/releases/download/v#{version}".freeze
-
-  on_macos do
-    on_arm do
-      url "#{BASE_URL}/agentid-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "REPLACE_WITH_SHA256_AARCH64_APPLE_DARWIN"
-    end
-    on_intel do
-      url "#{BASE_URL}/agentid-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "REPLACE_WITH_SHA256_X86_64_APPLE_DARWIN"
-    end
-  end
-
-  on_linux do
-    on_arm do
-      url "#{BASE_URL}/agentid-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "REPLACE_WITH_SHA256_AARCH64_LINUX_GNU"
-    end
-    on_intel do
-      url "#{BASE_URL}/agentid-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "REPLACE_WITH_SHA256_X86_64_LINUX_GNU"
-    end
-  end
+  depends_on "rust" => :build
 
   def install
-    bin.install "agentid"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/agentid --version")
+    assert_match "agentid 0.1.0", shell_output("#{bin}/agentid --version")
   end
 end
